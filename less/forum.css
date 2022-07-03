@@ -1,0 +1,16 @@
+.IndexPage .TagLinkButton{
+font-weight: bold !important;
+
+color:#000 !important;
+
+}
+.IndexPage .TagLinkButton when (@config-dark-mode =true){
+color:#fff !important;
+
+}
+
+.IndexPage span.Button-label{
+  color: white;
+  text-shadow: 2px 2px 5px black, 0 0 2px black, 0 0 2px black;
+
+}
