@@ -17,10 +17,10 @@ use Flarum\Api\Event\Serializing;
 return [
     (new Extend\Frontend('forum'))
         ->js(__DIR__.'/js/dist/forum.js')
-        ->css(__DIR__.'/less/forum.less'),
+        ->css(__DIR__.'/less/forum/forum.less'),
     (new Extend\Frontend('admin'))
         ->js(__DIR__.'/js/dist/admin.js')
-        ->css(__DIR__.'/less/admin.less'),
+        ->css(__DIR__.'/less/admin/admin.less'),
       new Extend\Locales(__DIR__.'/locale'),
     (new Extend\Settings)
         ->serializeToForum('BarChart','datlechin-flarum-discussion-count.BarChart'),
