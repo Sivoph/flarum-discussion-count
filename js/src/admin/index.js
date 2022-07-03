@@ -19,6 +19,8 @@ app.initializers.add('datlechin/flarum-discussion-count', () => {
         setting: 'datlechin-flarum-discussion-count.BarChart',
         name: 'BarChart',
         type: 'number',
+        min: 0,
+        max:1000;
         label: app.translator.trans('Divisor Adjustment (Larger divisor for larger forums)'),
       },
       30 // Optional: Priority
