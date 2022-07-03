@@ -12,13 +12,32 @@ app.initializers.add('datlechin/flarum-discussion-count', () => {
     const tag = this.attrs.model;
     const description = tag && tag.description();
     const className = classList(['TagLinkButton', 'hasIcon', this.attrs.className, tag.isChild() && 'child']);
+    var barChart = app.forum.attribute('BarChart');
+    const myStyle = {
+      backgroundColor: tag.color(),
+      width: tag.discussionCount() / barChart + "%",
+      borderRadius: "3px 0px 0px 3px",
+      padding: "5px"
+     };
+     function showFoo() {
+     if(tag.discussionCount() > 1000){
+
+     return "1k+";
+
+     }else{
+
+    return tag.discussionCount();
+
+     }
+     }
 
     return (
       <Link className={className} href={this.attrs.route} style={tag ? { '--color': tag.color() } : ''} title={description || ''}>
-        {tagIcon(tag, { className: 'Button-icon' })}
+      <div class="bargraph" style={myStyle}>
+      {tagIcon(tag, { className: 'Button-icon' })}
         <span className="Button-label">
-          {tag ? tag.name() : app.translator.trans('flarum-tags.forum.index.untagged_link')} ({tag.discussionCount()})
-        </span>
+          {tag ? tag.name() : app.translator.trans('flarum-tags.forum.index.untagged_link')} ({showFoo()})
+        </span></div>
       </Link>
     );
   });
