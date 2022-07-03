@@ -1,0 +1,3 @@
+datlechin-flarum-discussion-count:
+  admin:
+    barChart: Percentage increment bar length according to volume of discussions (Example: new forum may need just to add 1, with larger forums needing 0.01).
